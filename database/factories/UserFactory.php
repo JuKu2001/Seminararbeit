@@ -37,3 +37,51 @@ class UserFactory extends Factory
         });
     }
 }
+
+
+
+use App\User;
+use Faker\Generator as Faker;
+use Illuminate\Support\Str;
+
+factory->define(App\Lehrer::class, function (Faker $faker) {              // erzeugt Dummy-Datensätze für die Relation Lehrer
+
+    return[
+        'kürzel' => Str::random(rand(2)),
+        'name' => $faker->name,
+        //'fächer' => $faker->name
+    ];
+});
+
+
+
+factory->define(App\Klasse::class, function (Faker $faker) {            // erzeugt Dummy-Datensätze für die Relation Klasse
+
+    return[
+        'klassenbezeichnung' => Str::random(rand(2)),
+        'klassenraum' => mt_Rand(100,999),
+    ];
+});
+
+
+
+
+factory->define(App\Schueler::class, function (Faker $faker) {          // erzeugt Dummy-Datensätze für die Relation Schueler
+
+    return[
+        'e-mail' => $faker->unique()->safeEmail,
+        'name' => $faker->name,
+        'telefonnummer' => mt_Rand(1000000,9999999),
+    ];
+});
+
+
+
+factory->define(App\Anschrift::class, function (Faker $faker) {         // erzeugt Dummy-Datensätze für die Relation Anschrift
+
+    return[
+        'ort' => mt_Rand(10000,99999),
+        //'straße' => $faker->name,
+        'hausnummer' => $mt_Rand(1,100),
+    ];
+});
