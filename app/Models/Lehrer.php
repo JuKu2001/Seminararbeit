@@ -2,15 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Lehrer extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'kuerzel',
+        
+    ];
+
+
+    
 }
 
 
+/*
 
 <?php
 
@@ -18,7 +28,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lehrer extends Model // Die Anschrift des dazugehörigen Lehres wird ermittelt
+class lehrer //extends Model                                   // Die Anschrift des dazugehörigen Lehres wird ermittelt
 {
     
     public function anschrift()
@@ -36,7 +46,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lehrer extends Model   // Die Klassen in denen der Lehrer Lehrer ist werden ermittelt
+class lehrer //extends Model                                    // Die Klassen in denen der Lehrer Lehrer ist werden ermittelt
 {
     public function klassen()
     {

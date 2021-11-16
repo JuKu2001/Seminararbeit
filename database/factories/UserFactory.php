@@ -40,11 +40,11 @@ class UserFactory extends Factory
 
 
 
-use App\User;
+/*use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
-factory->define(App\Lehrer::class, function (Faker $faker) {              // erzeugt Dummy-Datensätze für die Relation Lehrer
+factory->define(Lehrer::class, function (Faker $faker) {                // erzeugt Dummy-Datensätze für die Relation Lehrer
 
     return[
         'kürzel' => Str::random(rand(2)),
@@ -85,3 +85,5 @@ factory->define(App\Anschrift::class, function (Faker $faker) {         // erzeu
         'hausnummer' => $mt_Rand(1,100),
     ];
 });
+
+*/

@@ -8,17 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Klasse extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'klassenbezeichnung',
+        'klassenraum',
+        
+    ];
 }
 
 
 
+/*
 <?php
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Klasse extends Model   // die Schüler die in eine Klasse gehöre werden ermittelt
+class Klasse extends Model                                   // die Schüler die in eine Klasse gehören werden ermittelt
 {
     
     public function schuelers()
@@ -46,7 +52,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Klasse extends Model     // alle Lehrer die zu der Klasse gehören bzw. dort unterrichten werden ermittelt
+class Klasse extends Model                                   // alle Lehrer die zu der Klasse gehören bzw. dort unterrichten werden ermittelt
 {
    
     public function lehrer()

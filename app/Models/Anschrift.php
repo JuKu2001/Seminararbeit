@@ -8,8 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Anschrift extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'strasse',
+        'hausnummer',
+        
+    ];
 }
 
+
+
+/*
 
 
 <?php
@@ -18,7 +26,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Anschrift extends Model  // Der Lehrer dem die Anschrift gehört wird ermittelt
+class Anschrift extends Model                   // Der Lehrer dem die Anschrift gehört wird ermittelt
 {  
     
     public function lehrer()
@@ -26,3 +34,5 @@ class Anschrift extends Model  // Der Lehrer dem die Anschrift gehört wird ermi
         return $this->belongsTo(lehrer::class);
     }
 }
+
+*/
