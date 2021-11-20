@@ -7,56 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Klasse extends Model
 {
+    //Einbinden von HasFactory
     use HasFactory;
+
     protected $fillable = [
         'klassenbezeichnung',
-        'klassenraum',
-        
+        'klassenraum'
     ];
-}
 
+    /*
+     * Wir müssen die Assoziation/Beziehung zwischen den Models hier mit Funktionen definieren.
+     * Sonst weiß das Programm bzw. Eloquent nicht, welches Model zu welchem Model wie in Beziehung steht
+     * Quelle: https://laravel.com/docs/8.x/eloquent-relationships#defining-relationships
+    */
 
-
-/*
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Klasse extends Model                                   // die Schüler die in eine Klasse gehören werden ermittelt
-{
-    
-    public function schuelers()
-    {
-        return $this->hasMany(Schueler::class);
+    //One-To-Many Beziehung zu Schueler
+    public function schueler() {
+        $return->hasMany(Schueler::class);
     }
-}
 
-
-
-use App\Models\Klasse;
-
-$schuelers = Klasse::find(1)->schuelers;
-
-foreach ($schuelers as $schueler) {
-    
-}
-
-
-
-
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Klasse extends Model                                   // alle Lehrer die zu der Klasse gehören bzw. dort unterrichten werden ermittelt
-{
-   
-    public function lehrer()
-    {
+    //Many-To-Many Beziehung zu Lehrer
+    public function lehrer() {
         return $this->belongsToMany(Lehrer::class);
     }
 }
