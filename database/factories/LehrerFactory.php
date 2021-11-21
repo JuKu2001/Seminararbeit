@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Anschrift;
 use App\Models\Lehrer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -23,7 +24,16 @@ class LehrerFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'kuerzel' => $this->faker->regexify('[A-Z]{2}'),
-            //'anschrift_id' => Anschrift::factory(),
+            //Hier wird der FK der Anschrift angegeben, sonst gibt es keinen Bezug zur Anschrift
         ];
     }
 }    
+
+/*  zur Erzeugung von dummys:
+
+    php artisan tinker
+
+    $Lehrer= new App\Models\Lehrer();
+
+    Lehrer::factory()->create();
+*/

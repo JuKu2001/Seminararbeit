@@ -17,7 +17,7 @@ class Lehrer extends Model
     ];
 
     /*
-     * Wir müssen die Assoziation/Beziehung zwischen den Models hier mit Funktionen definieren.
+     * Hier müssen die Assoziation/Beziehung zwischen den Models mit Funktionen definiert werden.
      * Sonst weiß das Programm bzw. Eloquent nicht, welches Model zu welchem Model wie in Beziehung steht
      * Quelle: https://laravel.com/docs/8.x/eloquent-relationships#defining-relationships
     */

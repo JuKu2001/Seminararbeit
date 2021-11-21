@@ -16,18 +16,18 @@ class Schueler extends Model
     ];
 
     /*
-     * Wir müssen die Assoziation/Beziehung zwischen den Models hier mit Funktionen definieren.
+     * Hier müssen die Assoziation/Beziehung zwischen den Models mit Funktionen definiert werden.
      * Sonst weiß das Programm bzw. Eloquent nicht, welches Model zu welchem Model wie in Beziehung steht
      * Quelle: https://laravel.com/docs/8.x/eloquent-relationships#defining-relationships
     */
 
     //One-To-Many Beziehung zu Anschrift
     public function anschrift() {
-        $this->belongsTo(Anschrift::class);
+        return $this->belongsTo(Anschrift::class);
     }
 
     //One-To-Many Beziehung zu Klasse
     public function klasse() {
-        $this->belongsTo(Klasse::class);
+        return $this->belongsTo(Klasse::class);
     }
 }

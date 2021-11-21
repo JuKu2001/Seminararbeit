@@ -9,7 +9,7 @@ class KlasseFactory extends Factory
 {
     //Quelle: https://laravel.com/docs/8.x/database-testing#defining-model-factories
     
-    //Hier wird das korrespondierende Model definiert werden, um die Beziehung Dummy <-> Model herzustellen
+    //Hier wird das korrespondierende Model definiert, um die Beziehung Dummy <-> Model herzustellen
     protected $model = Klasse::class;
 
     /**
@@ -25,3 +25,13 @@ class KlasseFactory extends Factory
         ];
     }
 }
+
+
+/*  zur Erzeugung von dummys:
+
+    php artisan tinker
+
+    $Klasse= new App\Models\Klasse();
+
+    Klasse::factory()->create();
+*/
