@@ -24,7 +24,7 @@ class AnschriftFactory extends Factory
             'strasse' => $this->faker->name(),
             'hausnummer' => $this->faker->regexify('[A-Z]{2}'),
             //Hier wird der FK des Lehrers angegeben, sonst gibt es keinen Bezug zum Lehrer
-            'lehrer_id' => Lehrer::factory(),
+            'lehrers_id' => Lehrer::factory()->create()->id
         ];
     }
 }

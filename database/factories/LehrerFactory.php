@@ -25,6 +25,7 @@ class LehrerFactory extends Factory
             'name' => $this->faker->name(),
             'kuerzel' => $this->faker->regexify('[A-Z]{2}'),
             //Hier wird der FK der Anschrift angegeben, sonst gibt es keinen Bezug zur Anschrift
+            
         ];
     }
 }    

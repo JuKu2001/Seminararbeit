@@ -25,8 +25,8 @@ class SchuelerFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             //Hier wird der FK der Klasse und der Anschrift angegeben, sonst gibt es keinen Bezug
-            'anschrift_id' => Anschrift::factory(),
-            'klasse_id' => Klasse::factory(),
+            'anschrifts_id' => Anschrift::factory()->create()->id,
+            'klasses_id' => Klasse::factory()->create()->id  
             
         ];
     }
