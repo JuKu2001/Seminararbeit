@@ -24,7 +24,7 @@ class Lehrer extends Model
 
     //One-To-One Beziehung zu Anschrift
     public function anschrift() {
-        return $this->hasOne(Phone::class);
+        return $this->hasOne(Anschrift::class);
     }
 
     //Many-To-Many Beziehung zu Klasse

@@ -28,6 +28,6 @@ class Anschrift extends Model
 
     //One-To-One Beziehung zu Lehrer
     public function lehrer() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Lehrer::class);
     }
 }
